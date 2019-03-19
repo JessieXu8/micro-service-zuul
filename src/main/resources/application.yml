@@ -7,14 +7,22 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: false
+#    register-with-eureka: true
+#    fetch-registry: false
     service-url:
       defaultZone: http://127.0.0.1:8383/eureka/
+#zuul:
+##  path indicates that it will jump to "http://localhost:8181/" when we visit url with "/api"
+#  routes:
+#    item:
+#      path: /api/**
+#      url: http://localhost:8181/
+
 zuul:
-#  path indicates that it will jump to "http://localhost:8181/" when we visit url with "/api"
   routes:
     item:
       path: /api/**
-      url: http://localhost:8181/
+      service-id: micro-service-item
+
+
 
