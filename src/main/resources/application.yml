@@ -21,8 +21,10 @@ eureka:
 zuul:
   routes:
     item:
-      path: /api/**
+      path: /item/**
       service-id: micro-service-item
-
+    order:
+      path: /order/**
+      service-id: micro-service-order
 
 
